@@ -1,0 +1,14 @@
+{
+    "name" : "nodejs-app1",
+    "version" : "0.0.1",
+    "main": "server.js",
+    "description" : "Sample Nodejs Application",
+    "author" : "manintheit.org",
+    "license" : "UNLICENSED",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies":{
+        "express": "^4.16.1"
+    }
+}

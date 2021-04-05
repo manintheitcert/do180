@@ -27,5 +27,5 @@ USER 26
 #ADD --chown=26 ./conf/postgresql.conf /var/lib/pgsql/data
 ADD --chown=26 ./entry-point-postgre.sh ./ 
 
-VOLUME ["/var/lib/pgsql/data"]
+#VOLUME ["/var/lib/pgsql/data"]
 CMD ["./entry-point-postgre.sh"]

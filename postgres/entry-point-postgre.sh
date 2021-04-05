@@ -3,6 +3,19 @@ set -m
 
 echo "Setting up Postgresql Database..."
 
+initdb -D /var/lib/pgsql/data
+
+
+cat <<-EOF > /var/lib/pgsql/data/pg_hba.conf 
+host  all  all 0.0.0.0/0 md5
+local all  all trust
+EOF
+
+cat <<-EOF > /var/lib/pgsql/data/postgresql.conf
+listen_addresses = '*'
+EOF
+
+
 /usr/bin/postgres -D /var/lib/pgsql/data -c  config_file=/var/lib/pgsql/data/postgresql.conf &
 
 sleep 10
